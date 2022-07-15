@@ -19,3 +19,39 @@ XOR은 둘이 다를때 1
 #define max 33
 
 int data = max; --> 나중에 고치기 편하고 가독성이좋다
+
+
+비트 연산
+ex 스테이터스 만들기
+
+#define hot 0
+#define cold 1
+#define thristy 2
+#define desease 4
+등의 여러 상태를 정의해두고
+int status = 0;
+status(32비트로 32종류상태표시가능)의 각 자리에 상태이상값을 저장해둠(각비트마다)
+
+비트넣기
+status |= hot;
+
+비트확인
+if(status & hot);
+
+비트 빼기
+status &= ~cold;
+-->  1010 인상태에서 (질병, 추움) cold의 반전 1101 을 곱하면 1000으로 질병만 남고 추움은 사라짐  
+
+
+숫자가 크므로 16진수로 보통 표현 0x 는 16진수라는 표시
+
+#define hot 0x0
+#define cold 0x1
+#define thristy 0x2
+#define desease 0x4
+#define desease2 0x8
+#define desease3 0x10
+#define desease4 0x20
+#define desease5 0x40
+.......
+
